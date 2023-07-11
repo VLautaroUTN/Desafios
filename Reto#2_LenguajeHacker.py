@@ -32,13 +32,19 @@ diccionarioDeConversion = {
         "w":"\\/\\/",
         "x":"><",
         "y":"j",
-        "z":"2"
+        "z":"2",
+        " ":" "
     }
 
 
-def lenguajeHacker(texto):
-    for letras in texto:
-        
+def lenguajeHacker(texto="Hello World"):
+    nuevoTexto = ""
+    for letra in texto:
+        nuevoTexto += diccionarioDeConversion[letra.lower()]
+    print(nuevoTexto)
 
-if "__name__" == "__main__":
-    lenguajeHacker()
+if __name__ == "__main__":
+    lenguajeHacker(
+        input("Ingrese texto \n-> ")
+    )
+    print("ok")
