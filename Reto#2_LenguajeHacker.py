@@ -41,10 +41,9 @@ def lenguajeHacker(texto="Hello World"):
     nuevoTexto = ""
     for letra in texto:
         nuevoTexto += diccionarioDeConversion[letra.lower()]
-    print(nuevoTexto)
+    return nuevoTexto
 
 if __name__ == "__main__":
-    lenguajeHacker(
-        input("Ingrese texto \n-> ")
-    )
-    print("ok")
+    print(lenguajeHacker(
+        input("Ingrese texto \n-> ")))
+    
