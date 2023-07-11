@@ -6,3 +6,39 @@
  *   con el alfabeto y los números en "leet".
  *   (Usa la primera opción de cada transformación. Por ejemplo "4" para la "a")
  """
+diccionarioDeConversion = {
+        "a":"4",
+        "b":"I3",
+        "c":"[",
+        "d":")",
+        "e":"3",
+        "f":"I=",
+        "g":"&",
+        "h":"#",
+        "i":"1",
+        "j":",_|",
+        "k":">|",
+        "l":"£",
+        "m":"/\/\\",
+        "n":"^/",
+        "o":"0",
+        "p":"|*",
+        "q":"(_,)",
+        "r":"I2",
+        "s":"5",
+        "t":"7",
+        "u":"(_)",
+        "v":"\\/",
+        "w":"\\/\\/",
+        "x":"><",
+        "y":"j",
+        "z":"2"
+    }
+
+
+def lenguajeHacker(texto):
+    for letras in texto:
+        
+
+if "__name__" == "__main__":
+    lenguajeHacker()
