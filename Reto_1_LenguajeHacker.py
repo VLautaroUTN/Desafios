@@ -40,7 +40,10 @@ diccionarioDeConversion = {
 def lenguajeHacker(texto="Hello World"):
     nuevoTexto = ""
     for letra in texto:
-        nuevoTexto += diccionarioDeConversion[letra.lower()]
+        if letra.lower() in diccionarioDeConversion.keys():
+            nuevoTexto += diccionarioDeConversion[letra.lower()]
+        else:
+            nuevoTexto += letra
     return nuevoTexto
 
 if __name__ == "__main__":
