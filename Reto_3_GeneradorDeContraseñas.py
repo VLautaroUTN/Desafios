@@ -25,9 +25,38 @@ def generadorContrasenas(longitud = 8, mayusculas = True,
     contrasena = "".join(random.choices(conjuntoTotal, k = longitud))
     return contrasena
 
-def validarLongitud(longitud):
-    
+def validarLongitud():
+    while True:
+        longitud = input("Longitud de contraseña: \n-> ")
+        try:
+            longitud = int(longitud)
+        except:
+            print("La longitud debe ser un numero")
+        if longitud >= 8 and longitud <= 16:
+            print("ok")
+            return longitud
+        else:
+            print("Longitud invalida")
+
+def menuSIoNO(textoDeseado):
+    while True:
+        print("¿Desea incluir " + textoDeseado + " ?")
+        eleccion = input("Y / N  \n-> ").lower()
+        if eleccion == "y":
+            return True
+        elif eleccion == "n":
+            return False
+        else:
+            print("Opcion invalida\n \n")
+
+def menuGenContr():
+    longi = validarLongitud()
+    mayus = menuSIoNO("mayusculas")
+    num = menuSIoNO("números")
+    simbol = menuSIoNO("simbolos")
+    contrasena = generadorContrasenas(longi, mayus, num, simbol)
+    print("Su contraseña es: \n" + contrasena)
+
 
 if __name__ == "__main__":
-    
-    generadorContrasenas()
+    menuGenContr()
