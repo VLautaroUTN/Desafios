@@ -30,13 +30,14 @@ def validarLongitud():
         longitud = input("Longitud de contraseña: \n-> ")
         try:
             longitud = int(longitud)
+            if longitud >= 8 and longitud <= 16:
+                print("ok")
+                return longitud
+            else:
+                print("Longitud invalida")
+                print("Debe tener una longitud entre 8 y 16")
         except:
             print("La longitud debe ser un numero")
-        if longitud >= 8 and longitud <= 16:
-            print("ok")
-            return longitud
-        else:
-            print("Longitud invalida")
 
 def menuSIoNO(textoDeseado):
     while True:
