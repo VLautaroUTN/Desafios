@@ -16,26 +16,34 @@
  * - Si quieres, puedes controlar errores en la entrada de datos.   
  * - Consulta las reglas del juego si tienes dudas sobre el sistema de puntos.   
 """
-puntajes = [0,15, 30, 40, "deuce", "ventaja", "ganador"]
-jugador1 = 0
-jugador2 = 0
+class PartidoDeTenis():
+    def __init__(self):
+        self.puntaje = [0,15, 30, 40, "deuce", "ventaja", "ganador"]
+        self.jugador1 = 0
+        self.jugador2 = 0
 
-def sumarPuntos(jugador):
-    if jugador.lower() == "p1":
-        jugador1 += 1
-    elif jugador.lower() == "p2":
-        jugador2 += 1
-    else:
-        print("jugador no valido")
+    def sumarPuntos(self, jugador):  # Se encarga de sumar los puntos
+        if jugador.lower() == "p1":
+            self.jugador1 += 1
+        elif jugador.lower() == "p2":
+            self.jugador2 += 1
+        else:
+            print("jugador no valido \n Debe escibirlo como p1 o p2")
 
-def partidoDeTenis():
-    while True:
-        diferencia = jugador1 - jugador2
-        if diferencia == 0 and jugador1 == 3:
-            print(puntajes[4])
-        elif diferencia == 1 and jugador1 >= 3 or jugador2 >= 3:
-            print(puntajes[5])
-    
+    def main(self):
+        while True:
+            self.sumarPuntos(input("¿Quien anotó? (p1 - p2)"))
+            diferencia = self.jugador1 - self.jugador2
+            print(self.jugador1,"-",self.jugador2)
+            print("Dif:", diferencia)
+            if diferencia == 0 and self.jugador1 == 3:
+                print(self.puntaje[4]) #Deuce
+            elif diferencia == 1 and self.jugador1 >= 3 or self.jugador2 >= 3:
+                print(self.puntaje[5]) #Ventaja
+            elif diferencia == 4:
+                print(self.puntaje[6], "p1")
+                break
 
 if __name__ == "__main__":
-    partidoDeTEnis()
+    partido = PartidoDeTenis()
+    partido.main()
